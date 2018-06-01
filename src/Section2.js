@@ -39,7 +39,7 @@ class Section2 extends React.Component{
 
 		this.handleSearch = this.handleSearch.bind(this);
 	}
-	
+
 	handleSearch(event){
 		this.setState({
 			term: event.target.value
@@ -47,14 +47,6 @@ class Section2 extends React.Component{
 	}
 
 	render(){
-		let active = 2;
-		let items = [];
-		for (let number = 1; number <= 3; number++) {
-		  items.push(
-		    <Pagination.Item active={number === active}>{number}</Pagination.Item>
-		  );
-		}
-
 		return(
 			<div>
 				<Tab.Container id="left-tabs-example" defaultActiveKey="first">
