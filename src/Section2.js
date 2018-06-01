@@ -9,9 +9,9 @@ import IMAGES2 from './gridgallery2.js';
 import TodoApp from './TodoApp.js';
 
 const styles = {
-		display: 'inline-block',
-		marginLeft: '16px',
-		marginRight: '16px'
+	display: 'inline-block',
+	marginLeft: '16px',
+	marginRight: '16px'
 };
 
 const captionStyle ={
@@ -100,7 +100,7 @@ class Section2 extends React.Component{
 					</div>
 				</Tab.Container>
 			</div>
-			);
+		);
 	}
 }
 

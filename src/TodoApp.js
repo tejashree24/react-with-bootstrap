@@ -2,8 +2,8 @@ import React from 'react';
 import booklist from './gridgallery.js';
 
 const dInline = {
-  display: "inline-block",
-  margin: "10px"
+    display: "inline-block",
+    margin: "10px"
 };
 
 const captionStyle ={
