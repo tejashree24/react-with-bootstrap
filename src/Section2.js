@@ -6,6 +6,7 @@ import booklist from './gridgallery.js';
 // import IMAGES from './gridgallery.js';
 import IMAGES1 from './gridgallery1.js';
 import IMAGES2 from './gridgallery2.js';
+import TodoApp from './TodoApp.js';
 
 const styles = {
 		display: 'inline-block',
@@ -82,27 +83,19 @@ class Section2 extends React.Component{
 								</Col>
 							</Row>
 						</div>
-					      <Tab.Content animation>
+					    <Tab.Content animation>
 					        <Tab.Pane eventKey="first">
 	 							<div>
 	 								<br/>
-	 								<ol>
-	 									{
-	 										this.state.books.filter(searchingFor(this.state.term)).map(books=>(
-	 											<li style={styles} key={books.id}>
-	 												<img src={books.src} alt={books.bookCaption} height={200} width={150}/>
-	 												<h5 style={captionStyle}>{books.bookCaption}</h5>
-	 											</li>
-
-	 										))
-	 									}	
-	 								</ol>
+									<TodoApp/>
 	 							</div>
 					        </Tab.Pane>
 					        <Tab.Pane eventKey="second">
 					        	Tab 2 content
 					        </Tab.Pane>
-					        <Tab.Pane eventKey="third">Tab 3 content</Tab.Pane>
+					        <Tab.Pane eventKey="third">
+					        	Tab 3 content
+					        </Tab.Pane>
 					    </Tab.Content>  
 					</div>
 				</Tab.Container>
@@ -139,3 +132,14 @@ export default Section2;
 //   </Carousel.Caption>
 // </Carousel.Item>
 // </Carousel>
+
+	 									// {
+	 									// 	this.state.books.filter(searchingFor(this.state.term)).map(books=>(
+
+									  //   <li style={styles} key={books.id}>
+									  //    <img src={books.src} alt={books.bookCaption} height={200} width={150}/>
+									  //    <h5 style={captionStyle}>{books.bookCaption}</h5>
+									  //   </li>
+
+									  //   ))
+	 									// }

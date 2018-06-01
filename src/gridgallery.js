@@ -45,8 +45,35 @@ const booklist =[
         bookCaption: 'The Confession',
         author: "abcd",
         price: 500
-        }
+        },
 
+        {
+        src: require("./images/b14.jpg"),
+        bookCaption: 'Lee Child',
+        author: "fghjk",
+        price: 250
+        },
+
+        {
+        src: require("./images/b15.jpg"),
+        bookCaption: 'MURDER',
+        author: "fghjk",
+        price: 250
+        },
+
+        {
+        src: require("./images/b16.jpg"),
+        bookCaption: 'The Rozabal Line',
+        author: "fghjk",
+        price: 250
+        },
+
+        {
+        src: require("./images/b17.jpg"),
+        bookCaption: 'The sixth man',
+        author: "fghjk",
+        price: 250
+        },
 ]
 
 export default booklist;
