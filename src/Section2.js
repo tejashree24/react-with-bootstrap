@@ -22,13 +22,6 @@ const captionStyle ={
     color: 'antiquewhite'
 }
 
-
-function searchingFor(term){
-	return function(x){
-    return x.bookCaption.toLowerCase().includes(term.toLowerCase()) || !term;
-  }
-}
-
 class Section2 extends React.Component{
 
 	constructor(){
@@ -87,7 +80,7 @@ class Section2 extends React.Component{
 					        <Tab.Pane eventKey="first">
 	 							<div>
 	 								<br/>
-									<TodoApp/>
+									<TodoApp filterContent={this.state.term}/>
 	 							</div>
 					        </Tab.Pane>
 					        <Tab.Pane eventKey="second">
@@ -131,7 +124,7 @@ export default Section2;
 //     <p>Third img</p>
 //   </Carousel.Caption>
 // </Carousel.Item>
-// </Carousel>
+// // </Carousel>
 
 	 									// {
 	 									// 	this.state.books.filter(searchingFor(this.state.term)).map(books=>(
@@ -143,3 +136,4 @@ export default Section2;
 
 									  //   ))
 	 									// }
+	

@@ -3,6 +3,10 @@ import {Nav,Navbar,NavItem,NavDropdown,MenuItem,Modal,Button} from 'react-bootst
 import SignUp from './Signup.js';
 import Login from './Login.js';
 
+const NavStyle = {
+	
+}
+
 class Navbardemo extends React.Component{
 	constructor(props, context) {
 	    super(props, context);
@@ -35,12 +39,14 @@ class Navbardemo extends React.Component{
 		            <NavItem eventKey={2} href="#">
 		              Catlog
 		            </NavItem>
-		            <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-		              <MenuItem eventKey={3.1}>Action</MenuItem>
-		              <MenuItem eventKey={3.2}>Another action</MenuItem>
-		              <MenuItem eventKey={3.3}>Something else here</MenuItem>
+		            <NavDropdown eventKey={3} title="Categories" id="basic-nav-dropdown">
+		              <MenuItem eventKey={3.1}>Children</MenuItem>
+		              <MenuItem eventKey={3.2}>Study</MenuItem>
+		              <MenuItem eventKey={3.3}>Cooking</MenuItem>
 		              <MenuItem divider />
-		              <MenuItem eventKey={3.4}>Separated link</MenuItem>
+		              <MenuItem eventKey={3.4}>Fiction</MenuItem>
+		              <MenuItem divider />
+		              <MenuItem eventKey={3.4}>Non-Fiction</MenuItem>
 		            </NavDropdown>
 		          </Nav>
 		          <Nav pullRight>

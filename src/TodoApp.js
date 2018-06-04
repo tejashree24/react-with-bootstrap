@@ -16,9 +16,17 @@ const captionStyle ={
     color: 'antiquewhite'
 }
 
+function searchingFor(term){
+    return function(x){
+    return x.bookCaption.toLowerCase().includes(term.toLowerCase()) || !term;
+  }
+}
+
+
 class TodoApp extends React.Component {
-      constructor() {
-        super();
+      constructor(props) {
+        super(props);
+
         this.state = {
           todos: booklist,
           currentPage: 1,
@@ -41,20 +49,21 @@ class TodoApp extends React.Component {
         const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
         const currentTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
 
-        const renderTodos = currentTodos.map((todo, index) => {
+        const renderTodos = currentTodos.filter(searchingFor(this.props.filterContent)).map((todo, index) => {
           return <li key={index} style={dInline}>
                     <img src={todo.src} alt={todo.bookCaption} height={200} width={150}/>
-                          <h5>{todo.bookCaption}</h5>
+                          <h5>{todo.bookCaption}
+                          </h5>
                   </li>;
         });
+
 
         // Logic for displaying page numbers
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(todos.length / todosPerPage); i++) {
           pageNumbers.push(i);
         }
-
-        
+ 
         const renderPageNumbers = pageNumbers.map(number => {
           return (
             <li style={captionStyle}
