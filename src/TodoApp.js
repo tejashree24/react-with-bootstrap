@@ -3,17 +3,18 @@ import booklist from './gridgallery.js';
 
 const dInline = {
     display: "inline-block",
-    margin: "10px"
+    margin: "10px",
+    padding: "10px",
+    backgroundColor: "#b2ad8d",
 };
 
 const captionStyle ={
     display: "inline-block",
-    margin: "10px",
     padding: '10px',
     fontSize: '17px',
     textAlign: 'center',
     backgroundColor: '#b2ad8d',
-    color: 'antiquewhite'
+    color: 'antiquewhite',
 }
 
 function searchingFor(term){
@@ -50,11 +51,15 @@ class TodoApp extends React.Component {
         const currentTodos = todos.slice(indexOfFirstTodo, indexOfLastTodo);
 
         const renderTodos = currentTodos.filter(searchingFor(this.props.filterContent)).map((todo, index) => {
-          return <li key={index} style={dInline}>
+          return (
+                <li key={index} style={dInline}>
                     <img src={todo.src} alt={todo.bookCaption} height={200} width={150}/>
-                          <h5>{todo.bookCaption}
+                          <br/>
+                          <h5 style={captionStyle}>
+                            {todo.bookCaption}
                           </h5>
-                  </li>;
+                </li>
+            )
         });
 
 
@@ -66,12 +71,12 @@ class TodoApp extends React.Component {
  
         const renderPageNumbers = pageNumbers.map(number => {
           return (
-            <li style={captionStyle}
+            <li style={dInline}
               key={number}
               id={number}
               onClick={this.handleClick}
             >
-              {number}
+                {number}
             </li>
           );
         });
