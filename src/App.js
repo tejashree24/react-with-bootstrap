@@ -5,6 +5,7 @@ import Navbardemo from './Navbardemo.js';
 import Section1 from './Section1.js';
 import Section2 from './Section2.js';
 import TodoApp from './array_try.js';
+import Booklist from './MysqlTry.js';
 
 
 
@@ -18,6 +19,7 @@ render() {
                     <Section2/>
                 </div>
                 <div>
+                    <Booklist/>
                 </div>
             </div>
         );
