@@ -9,6 +9,21 @@ const dInline = {
     padding: "10px"
 };
 
+const captionStyle ={
+    display: "inline-block",
+    padding: '10px',
+    fontSize: '17px',
+    textAlign: 'center',
+    backgroundColor: '#b2ad8d',
+    color: 'antiquewhite',
+}
+
+function searchingFor(term){
+    return function(x){
+    return x.b_name.toLowerCase().includes(term.toLowerCase()) || !term;
+  }
+}
+
 class Booklist extends React.Component{
 	constructor(){
 		super();
@@ -29,15 +44,17 @@ class Booklist extends React.Component{
 	}
 	
 	render(){
-		const {booklist} = this.state;
 		return(
 			<div>
 				<ul>
 					{
-						this.state.booklist.map( books => {
+						this.state.booklist.filter(searchingFor(this.props.filterContent)).map( books => {
 							return (
 								<li key={`${books.id}`} style={dInline}>
-									<img src={require(`${books.b_img}`)} alt={books.b_name} height={200} width={150}/>
+									<div style={captionStyle}>
+										<img src={require(`${books.b_img}`)} alt={books.b_name} height={200} width={150}/>
+										<h4>{books.b_name}</h4>
+									</div>
 								</li>
 								)
 							}

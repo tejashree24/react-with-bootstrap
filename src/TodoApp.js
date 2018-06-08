@@ -62,13 +62,12 @@ class TodoApp extends React.Component {
             )
         });
 
-
         // Logic for displaying page numbers
         const pageNumbers = [];
         for (let i = 1; i <= Math.ceil(todos.length / todosPerPage); i++) {
           pageNumbers.push(i);
         }
- 
+        
         const renderPageNumbers = pageNumbers.map(number => {
           return (
             <li style={dInline}

@@ -7,6 +7,7 @@ import booklist from './gridgallery.js';
 import IMAGES1 from './gridgallery1.js';
 import IMAGES2 from './gridgallery2.js';
 import TodoApp from './TodoApp.js';
+import Booklist from './Booklist.js';
 
 const styles = {
 	display: 'inline-block',
@@ -80,7 +81,7 @@ class Section2 extends React.Component{
 					        <Tab.Pane eventKey="first">
 	 							<div>
 	 								<br/>
-									<TodoApp filterContent={this.state.term}/>
+	 								<Booklist filterContent={this.state.term}/>
 	 							</div>
 					        </Tab.Pane>
 					        <Tab.Pane eventKey="second">
@@ -100,6 +101,7 @@ class Section2 extends React.Component{
 export default Section2;
 									  
 
+									// <TodoApp filterContent={this.state.term}/>
 
 
 // <Carousel>
