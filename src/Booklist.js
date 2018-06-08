@@ -3,6 +3,12 @@ import React,{Component} from 'react';
 // import './customers.css';
 // import b1 from "./images/b1.jpg";
 
+const dInline = {
+    display: "inline-block",
+    margin: "10px",
+    padding: "10px"
+};
+
 class Booklist extends React.Component{
 	constructor(){
 		super();
@@ -21,23 +27,33 @@ class Booklist extends React.Component{
 		.then(response => this.setState({booklist:response.data}))
 		.catch(err=> console.error(err))
 	}
-
-	renderCustomer = ({id,b_name,b_img}) => 
-		<div key={id}>
-			<h5>Id: {id} Name: {b_name} </h5>
-			<img src={require(`${b_img}`)} height={50} width={50}/>
-		</div>
-
 	
 	render(){
 		const {booklist} = this.state;
 		return(
 			<div>
-				<h3> Booklist Details </h3>
-					{booklist.map(this.renderCustomer)}
+				<ul>
+					{
+						this.state.booklist.map( books => {
+							return (
+								<li key={`${books.id}`} style={dInline}>
+									<img src={require(`${books.b_img}`)} alt={books.b_name} height={200} width={150}/>
+								</li>
+								)
+							}
+
+						)
+					}
+				</ul>				
 			</div>
 		);
 	}
 }
 
 export default Booklist;
+
+
+//give pagination to image tag
+//and define filter to book caption 
+// focus on two different things TodoApp and BookList 
+//main focus on search filter

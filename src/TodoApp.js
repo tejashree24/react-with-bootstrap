@@ -1,5 +1,6 @@
 import React from 'react';
 import booklist from './gridgallery.js';
+import Booklist from './Booklist.js';
 
 const dInline = {
     display: "inline-block",
@@ -53,8 +54,7 @@ class TodoApp extends React.Component {
         const renderTodos = currentTodos.filter(searchingFor(this.props.filterContent)).map((todo, index) => {
           return (
                 <li key={index} style={dInline}>
-                    <img src={todo.src} alt={todo.bookCaption} height={200} width={150}/>
-                          <br/>
+                          <Booklist/>
                           <h5 style={captionStyle}>
                             {todo.bookCaption}
                           </h5>
