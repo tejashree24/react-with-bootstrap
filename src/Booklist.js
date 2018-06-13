@@ -11,7 +11,6 @@ const dInline = {
 
 const captionStyle ={
     display: "inline-block",
-    padding: '10px',
     fontSize: '17px',
     textAlign: 'center',
     backgroundColor: '#b2ad8d',

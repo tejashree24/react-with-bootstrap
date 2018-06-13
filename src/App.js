@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 // import './array_try.css';
 import {Nav,Navbar,NavItem,NavDropdown,MenuItem} from 'react-bootstrap';
 import Navbardemo from './Navbardemo.js';

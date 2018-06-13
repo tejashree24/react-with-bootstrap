@@ -23,6 +23,10 @@ const captionStyle ={
     color: 'antiquewhite'
 }
 
+const gridStyle = {
+	padding:'10px'
+}
+
 class Section2 extends React.Component{
 
 	constructor(){
@@ -47,17 +51,17 @@ class Section2 extends React.Component{
 				<Tab.Container id="left-tabs-example" defaultActiveKey="first">
 					<div className="Container">
 						<div className="grid">
-							<Row className="show-grid">
+							<Row className="show-grid" style={gridStyle}>
 								<Col md={6}>
 									<Nav bsStyle="pills">
 							        <NavItem eventKey="first">
-							        	<a href="#">Tab 1</a>
+							        	<a href="#">Story</a>
 							        </NavItem>
 							        <NavItem eventKey="second">
-							        	<a href="#">Tab 2</a>
+							        	<a href="#">Fiction</a>
 							        </NavItem>
 							        <NavItem eventKey="third">
-							        	<a href="#">Tab 3</a>
+							        	<a href="#">Non Fiction</a>
 							        </NavItem>
 							      </Nav>
 							    </Col>
@@ -79,16 +83,13 @@ class Section2 extends React.Component{
 						</div>
 					    <Tab.Content animation>
 					        <Tab.Pane eventKey="first">
-	 							<div>
-	 								<br/>
 	 								<Booklist filterContent={this.state.term}/>
-	 							</div>
 					        </Tab.Pane>
 					        <Tab.Pane eventKey="second">
-					        	Tab 2 content
+					        		<Booklist filterContent={this.state.term}/>
 					        </Tab.Pane>
 					        <Tab.Pane eventKey="third">
-					        	Tab 3 content
+					        		<Booklist filterContent={this.state.term}/>
 					        </Tab.Pane>
 					    </Tab.Content>  
 					</div>
