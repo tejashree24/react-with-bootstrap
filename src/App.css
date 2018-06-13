@@ -30,7 +30,7 @@
     background-color: #9E4435;
 }
 
-a,a:hover,a:not(:hover) {
+a:hover,a:not(:hover) {
     color: #fff;
     text-decoration: none;
 }
