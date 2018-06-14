@@ -37,7 +37,7 @@ class Section2 extends React.Component{
 	constructor(){
 		super();
 		this.state = {
-			books: booklist,
+			// books: booklist,
 			term : ''
 		};
 
@@ -83,7 +83,7 @@ class Section2 extends React.Component{
 								        	</NavItem>
 								      	</Nav>
 								    </Col>
-									<Col md={6}>
+									<Col md={6} className="text-center">
 										<Form inline>
 											<FormGroup>
 												<ControlLabel> Search Book </ControlLabel>{"   "}
@@ -104,7 +104,7 @@ class Section2 extends React.Component{
 	 								<Route path='/story' exact strict render= {
 	 									() => {
 	 										return(
-	 											<Booklist filterContent={this.state.term}/>
+	 											<TodoApp filterContent={this.state.term}/>
 	 											)
 	 									}
 	 								}/>
