@@ -1,12 +1,12 @@
-
-import React,{Component} from 'react';
-// import './customers.css';
-// import b1 from "./images/b1.jpg";
+import React from 'react';
+// import booklist from './gridgallery.js';
+// import Booklist from './Booklist.js';
 
 const dInline = {
     display: "inline-block",
     margin: "10px",
-    padding: "10px"
+    padding: "10px",
+    backgroundColor: "#b2ad8d",
 };
 
 const captionStyle ={
@@ -23,53 +23,89 @@ function searchingFor(term){
   }
 }
 
-class Fiction extends React.Component{
-	constructor(){
-		super();
-		this.state ={
-			booklist: []	
-		};
-	}
 
-	componentDidMount(){
-		this.getBooks();
-	}
+class Fiction extends React.Component {
+      constructor(props) {
+        super(props);
 
-	getBooks = _ => {
-		fetch('http://localhost:5000/fiction')
-		.then(response => response.json())
-		.then(response => this.setState({booklist:response.data}))
-		.catch(err=> console.error(err))
-	}
-	
-	render(){
-		return(
-			<div>
-				<ul>
-					{
-						this.state.booklist.filter(searchingFor(this.props.filterContent)).map( books => {
-							return (
-								<li key={`${books.id}`} style={dInline}>
-									<div style={captionStyle}>
-										<img src={require(`${books.b_img}`)} alt={books.b_name} height={200} width={150}/>
-										<h4>{books.b_name}</h4>
-									</div>
-								</li>
-								)
-							}
+        this.state = {
+          booklist: [],
+          currentPage: 1,
+          todosPerPage: 3
+        };
+        this.handleClick = this.handleClick.bind(this);
+      }
 
-						)
-					}
-				</ul>				
-			</div>
-		);
-	}
-}
+      componentDidMount(){
+        this.getBooks();
+      }
 
-export default Fiction;
+      getBooks = _ => {
+        fetch('http://localhost:5000/fiction')
+        .then(response => response.json())
+        .then(response => this.setState({booklist:response.data}))
+        .catch(err=> console.error(err))
+      }
 
+      handleClick(event) {
+        this.setState({
+          currentPage: Number(event.target.id)
+        });
+      }
 
-//give pagination to image tag
-//and define filter to book caption 
-// focus on two different things TodoApp and BookList 
-//main focus on search filter
+      render() {
+
+        const { booklist, currentPage, todosPerPage } = this.state;
+
+        // Logic for displaying current todos
+        const indexOfLastTodo = currentPage * todosPerPage;
+        const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+        const currentTodos = booklist.slice(indexOfFirstTodo, indexOfLastTodo);
+        const renderTodos = currentTodos.filter(searchingFor(this.props.filterContent)).map((books) => {
+          return (
+                <li style={dInline}>
+                  <div style={captionStyle}>
+                    <img src={require(`${books.b_img}`)} alt={books.b_name} height={200} width={150}/>
+                    <h4>{books.b_name}</h4>
+                  </div>
+                </li>
+            )
+        });
+
+        console.log("currentTodos:",currentTodos);
+        console.log("renderTodos:",renderTodos);
+
+        // Logic for displaying page numbers
+        const pageNumbers = [];
+        for (let i = 1; i <= Math.ceil(booklist.length / todosPerPage); i++) {
+          pageNumbers.push(i);
+        }
+        
+        const renderPageNumbers = pageNumbers.map(number => {
+          return (
+            <li style={dInline}
+              key={number}
+              id={number}
+              onClick={this.handleClick}
+            >
+                {number}
+            </li>
+          );
+        });
+
+        return (
+          <div>
+            <ul>
+              {renderTodos}
+            </ul>
+            <ul id="page-numbers" >
+                {renderPageNumbers}
+            </ul>
+          </div>
+        );
+      }
+    }
+
+    export default Fiction;
+                    // <img src={require(`${books.b_img}`)} alt={books.b_name} height={200} width={150}/>
+                    // <h4>{books.b_name}</h4>

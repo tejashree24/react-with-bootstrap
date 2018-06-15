@@ -61,7 +61,7 @@ class TodoApp extends React.Component {
         const indexOfLastTodo = currentPage * todosPerPage;
         const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
         const currentTodos = booklist.slice(indexOfFirstTodo, indexOfLastTodo);
-        const renderTodos = currentTodos.map((books) => {
+        const renderTodos = currentTodos.filter(searchingFor(this.props.filterContent)).map((books) => {
           return (
                 <li style={dInline}>
                   <div style={captionStyle}>
@@ -71,6 +71,9 @@ class TodoApp extends React.Component {
                 </li>
             )
         });
+
+        console.log("currentTodos:",currentTodos);
+        console.log("renderTodos:",renderTodos);
 
         // Logic for displaying page numbers
         const pageNumbers = [];
@@ -90,6 +93,31 @@ class TodoApp extends React.Component {
           );
         });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         return (
           <div>
             <ul>
@@ -104,3 +132,5 @@ class TodoApp extends React.Component {
     }
 
     export default TodoApp;
+                    // <img src={require(`${books.b_img}`)} alt={books.b_name} height={200} width={150}/>
+                    // <h4>{books.b_name}</h4>

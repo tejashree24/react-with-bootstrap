@@ -143,7 +143,7 @@ class Section2 extends React.Component{
 export default Section2;
 									  
 
-									// <TodoApp filterContent={this.state.term}/>
+									// <Booklist filterContent={this.state.term}/>
 
 
 // <Carousel>

@@ -45,6 +45,7 @@ class Booklist extends React.Component{
 	}
 	
 	render(){
+		console.log("booklist",this.state.booklist);
 		return(
 			<div>
 				<ul>
