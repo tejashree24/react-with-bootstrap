@@ -25,6 +25,10 @@
 /*Navbar{
   display: inline-block;
 }*/
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+  color:#FFF;
+  background-color: #938D74;
+}
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
     background-color: #9E4435;

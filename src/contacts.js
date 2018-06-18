@@ -4,10 +4,11 @@ import bgimg from './images/bookBG.png';
 
 const bg={
 	margin:"10px 0px",
+	padding:"20px",
+	minHeight: "225px",	
 	background: `url(${bgimg}) left bottom repeat-x rgb(149, 139, 120)`,
 	height: "191px",
-	color: "#fff",
-	padding:"30px"
+	color: "#fff"
 }
 
 class Contact extends React.Component{

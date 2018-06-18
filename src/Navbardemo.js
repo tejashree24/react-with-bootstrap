@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {Nav,Navbar,NavItem,NavDropdown,MenuItem,Modal,Button} from 'react-bootstrap';
 import SignUp from './Signup.js';
 import Login from './Login.js';
+import booklogo from './images/booklogo.png';
+import b1 from './images/b1.jpg';
 
 const NavStyle = {
 	
@@ -23,33 +25,22 @@ class Navbardemo extends React.Component{
     	this.setState({ signUpShow: false });
     	this.setState({ loginShow: false });
   	}
+
 	render(){
 		return(
 			<div>
 				<Navbar className="navbarCss">
 		          <Navbar.Header>
 		            <Navbar.Brand>
-		              <a href="#home">Book Library</a>
 		            </Navbar.Brand>
 		          </Navbar.Header>
-		          <Nav>
-		            <NavItem eventKey={1} href="#">
+		          <Nav pullRight>
+		          	<NavItem eventKey={1} href="#">
 		              Event
 		            </NavItem>
 		            <NavItem eventKey={2} href="#">
 		              Catlog
 		            </NavItem>
-		            <NavDropdown eventKey={3} title="Categories" id="basic-nav-dropdown">
-		              <MenuItem eventKey={3.1}>Children</MenuItem>
-		              <MenuItem eventKey={3.2}>Study</MenuItem>
-		              <MenuItem eventKey={3.3}>Cooking</MenuItem>
-		              <MenuItem divider />
-		              <MenuItem eventKey={3.4}>Fiction</MenuItem>
-		              <MenuItem divider />
-		              <MenuItem eventKey={3.4}>Non-Fiction</MenuItem>
-		            </NavDropdown>
-		          </Nav>
-		          <Nav pullRight>
 		            <NavItem eventKey={1} href="#" onClick={() => this.setState({ signUpShow: true })}>
 		              Sign Up
 		            </NavItem>
@@ -100,8 +91,18 @@ class Navbardemo extends React.Component{
 		          </Nav>
 		        </Navbar>
 			</div>
-			);
+		);
 	}
 }
 
 export default Navbardemo;
+		            // <NavDropdown eventKey={3} title="Categories" id="basic-nav-dropdown">
+		            //   <MenuItem eventKey={3.1}>Children</MenuItem>
+		            //   <MenuItem eventKey={3.2}>Study</MenuItem>
+		            //   <MenuItem eventKey={3.3}>Cooking</MenuItem>
+		            //   <MenuItem divider />
+		            //   <MenuItem eventKey={3.4}>Fiction</MenuItem>
+		            //   <MenuItem divider />
+		            //   <MenuItem eventKey={3.4}>Non-Fiction</MenuItem>
+		            // </NavDropdown>
+		              // <img src={booklogo} style={{width: '50%', height: '50px'}}/>
