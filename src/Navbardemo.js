@@ -34,7 +34,7 @@ class Navbardemo extends React.Component{
 		            <Navbar.Brand>
 		            </Navbar.Brand>
 		          </Navbar.Header>
-		          <Nav pullRight>
+		          <Nav>
 		          	<NavItem eventKey={1} href="#">
 		              Event
 		            </NavItem>

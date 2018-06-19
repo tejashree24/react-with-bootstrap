@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 .App {
   text-align: center;
 }
@@ -22,17 +24,44 @@
   font-size: large;
 }
 
-/*Navbar{
-  display: inline-block;
-}*/
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+.section1{
+  width:100%;
+  height: 180vh;
+  background: url('./images/bg_book_flip.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom 0px right 0px;;
+}
+
+.navbar {
+  background-color: transparent;
+  border: none !important; 
+}
+.navbar ul {
+  float: right;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+
+.navbar ul li a{
+  list-style: 80px;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  transition: .5s;
+  color: #2F0000 !important;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  background-color: transparent;
+}
+/*.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
   color:#FFF;
   background-color: #938D74;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
     background-color: #9E4435;
-}
+}*/
 
 a:hover,a:not(:hover) {
     color: #fff;
